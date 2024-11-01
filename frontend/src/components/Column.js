@@ -5,7 +5,7 @@ import { IoAddOutline } from 'react-icons/io5';
 
 function Column({ title, status, tasks, onEditTask, onDeleteTask, onStatusChange, onChecklistItemToggle, users, onCreateTask, currentUser }) {
   const [expandedTasks, setExpandedTasks] = useState(new Set());
-  const [setIsAllExpanded] = useState(false);
+  const [isAllExpanded, setIsAllExpanded] = useState(false);
 
   const handleExpandTask = (taskId, isExpanded) => {
     const newExpandedTasks = new Set(expandedTasks);
@@ -19,11 +19,9 @@ function Column({ title, status, tasks, onEditTask, onDeleteTask, onStatusChange
 
   const toggleAllTasks = () => {
     if (expandedTasks.size > 0) {
-      // If any task is expanded, collapse all
       setExpandedTasks(new Set());
       setIsAllExpanded(false);
     } else {
-      // If all tasks are collapsed, expand all
       setExpandedTasks(new Set(tasks.map(task => task._id)));
       setIsAllExpanded(true);
     }

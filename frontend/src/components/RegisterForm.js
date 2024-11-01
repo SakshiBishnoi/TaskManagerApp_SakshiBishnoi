@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { register } from '../api/authApi';
+import axios from 'axios';
 import astronautImage from '../assets/astronaut.png';
 import backImage from '../assets/Back.png';
 import '../styles/auth.css';

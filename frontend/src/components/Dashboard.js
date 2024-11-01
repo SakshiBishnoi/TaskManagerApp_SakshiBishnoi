@@ -6,7 +6,7 @@ import Board from './Board';
 import Sidebar from './Sidebar';
 import { createTask, getTasks, updateTask, deleteTask, getTaskStats, getAllUsers, bulkUpdateTasks } from '../api/taskApi';
 import Notifications from './Notifications';
-import { FiUsers } from 'react-icons/fi';  // We'll use react-icons for the user icon
+import { FiUsers } from 'react-icons/fi';
 import '../styles/dashboard.css';
 import { getCurrentUser } from '../api/userApi';
 import AddPeopleModal from './AddPeopleModal';
@@ -72,7 +72,6 @@ function tasksReducer(state, action) {
   }
 }
 
-// Add this helper function at the top of the file, before the Dashboard function
 const getDisplayName = (fullName) => {
   if (!fullName) return '';
   const nameParts = fullName.trim().split(' ');
