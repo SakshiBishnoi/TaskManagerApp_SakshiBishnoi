@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { isAuthenticated, getToken, removeToken } from '../utils/token';
+import { isAuthenticated, getToken } from '../utils/token';
 import TaskModal from './TaskModal';
 import Board from './Board';
 import Sidebar from './Sidebar';
@@ -89,11 +89,9 @@ function Dashboard() {
   const [selectedAssignee, setSelectedAssignee] = useState('');
   const [isBulkAssigning, setIsBulkAssigning] = useState(false);
   const [showAddPeoplePopup, setShowAddPeoplePopup] = useState(false);
-  const [email, setEmail] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
-  const [modalType, setModalType] = useState(null); // 'logout' or 'delete'
   const [timeRange, setTimeRange] = useState(() => {
   const token = localStorage.getItem('token');
     if (token) {
@@ -121,7 +119,7 @@ function Dashboard() {
 
   useEffect(() => {
     fetchUsers().catch(error => console.error('Error in fetchUsers:', error));
-  }, []);
+  }, [fetchTasks]);
 
   useEffect(() => {
     console.log('Users in Dashboard:', users);
