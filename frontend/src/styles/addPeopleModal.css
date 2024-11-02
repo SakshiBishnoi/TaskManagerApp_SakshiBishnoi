@@ -1,0 +1,207 @@
+.add-people-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .add-people-content {
+    background: white;
+    border-radius: 16px;
+    width: 400px;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .add-people-header h3 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0D062D;
+  }
+  
+  .add-people-select {
+    position: relative;
+    width: 100%;
+  }
+  
+  .add-people-dropdown-button {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #0D062D;
+    background: white;
+    text-align: left;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .add-people-dropdown-button:hover {
+    background: #F5F5F5;
+  }
+  
+  .add-people-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .add-people-dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    background: #F4D7DA;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #0D062D;
+  }
+  
+  .assign-button {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .assign-button:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .assign-button.unassign-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+  }
+  
+  .assign-button.unassign-button:hover {
+    background-color: #ff7875;
+  }
+  
+  .add-people-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  
+  .add-people-cancel,
+  .add-people-submit {
+    padding: 8px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .add-people-cancel {
+    background: transparent;
+    border: 1px solid #fa0000;
+    color: #ff0000;
+  }
+  
+  .add-people-submit {
+    background: #17A2B8;
+    border: none;
+    color: white;
+  }
+  
+  .add-people-submit:disabled {
+    background: #17A2B8;
+    cursor: not-allowed;
+  }
+  
+  .add-people-cancel:hover {
+    background: #f5f5f5;
+  }
+
+.success-message {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.success-message h3 {
+  margin: 0 0 24px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0D062D;
+}
+
+.okay-button {
+  background: #17A2B8;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 50%;
+}
+
+.okay-button:hover {
+  background: #148ea1;
+}
+
+.add-people-dropdown-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.add-people-dropdown-menu::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+  margin: 4px 0;
+}
+
+.add-people-dropdown-menu::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.add-people-dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
