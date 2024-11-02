@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router-dom';
 import { removeToken, isAuthenticated, getToken } from '../utils/token';
-import { updateUser, getUserData } from '../api/userApi';
+import { updateUser, getUserData } from '../../api/userApi';
 import '../styles/settings.css';
 import { FiEye } from "react-icons/fi";
 import { GoEyeClosed } from "react-icons/go";

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from './Sidebar';
 import { useNavigate } from 'react-router-dom';
 import { removeToken, isAuthenticated } from '../utils/token';
-import { getTaskStats } from '../api/taskApi';
+import { getTaskStats } from '../../api/taskApi';
 import '../styles/analytics.css';
 
 function Analytics() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { getSharedTask } from '../api/taskApi';
+import { getSharedTask } from '../../api/taskApi';
 import '../styles/publicTaskView.css';
 import logo from '../assets/logo.png';  // Add this import
 
