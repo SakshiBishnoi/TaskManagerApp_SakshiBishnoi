@@ -14,7 +14,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://taskmanagementapp-sakshibishnoi.netlify.app/',
+    'https://taskmanagementapp-sakshibishnoi.netlify.app',
     'https://taskmanagerapp-sakshibishnoi.onrender.com'
   ],
   credentials: true,
