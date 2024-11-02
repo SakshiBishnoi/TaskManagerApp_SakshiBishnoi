@@ -118,7 +118,7 @@ function Dashboard() {
 
   useEffect(() => {
     fetchUsers().catch(error => console.error('Error in fetchUsers:', error));
-  }, [fetchTasks]);
+  }, []);
 
   useEffect(() => {
     console.log('Users in Dashboard:', users);
