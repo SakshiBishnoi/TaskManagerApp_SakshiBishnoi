@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { shareTask } from '../../api/taskApi';
+import { shareTask } from '../api/taskApi';
 import { BsThreeDots } from 'react-icons/bs';
 import { IoChevronDownOutline, IoChevronUpOutline } from 'react-icons/io5';
 import '../styles/taskCard.css';

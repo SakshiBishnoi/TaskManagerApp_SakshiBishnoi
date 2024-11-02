@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getNotifications, markNotificationAsRead } from '../../api/notificationApi';
+import { getNotifications, markNotificationAsRead } from '../api/notificationApi';
 import '../styles/notifications.css';
 
 function Notifications() {
