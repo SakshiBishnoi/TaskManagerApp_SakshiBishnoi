@@ -41,12 +41,21 @@ router.post('/task-assigned', auth, async (req, res) => {
   try {
     const { taskId, assignedTo, taskTitle } = req.body;
     
+    if (!taskId || !assignedTo || !taskTitle) {
+      return res.status(400).json({ 
+        message: 'Missing required fields: taskId, assignedTo, or taskTitle' 
+      });
+    }
+
     // Get the assigner's (current user's) details
     const assigner = await User.findById(req.user.id).select('email name');
+    if (!assigner) {
+      return res.status(404).json({ message: 'Assigner not found' });
+    }
     
     const notification = new Notification({
-      user: assignedTo, // The person receiving the task
-      assignee: req.user.id, // The person assigning the task
+      user: assignedTo,
+      assignee: req.user.id,
       message: `Task "${taskTitle}" has been assigned to you by ${assigner.email}`,
       read: false,
       taskId: taskId
@@ -63,7 +72,10 @@ router.post('/task-assigned', auth, async (req, res) => {
     res.status(201).json(notification);
   } catch (error) {
     console.error('Error creating task assignment notification:', error);
-    res.status(500).json({ message: error.message });
+    res.status(500).json({ 
+      message: 'Server error while creating notification',
+      error: error.message 
+    });
   }
 });
 

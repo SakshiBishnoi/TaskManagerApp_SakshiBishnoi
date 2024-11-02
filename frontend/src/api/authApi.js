@@ -70,3 +70,13 @@ export const login = async (credentials) => {
   }
 };
 
+export const createTaskAssignmentNotification = async (data) => {
+  try {
+    const response = await axiosInstance.post('/api/notifications/task-assigned', data);
+    return response.data;
+  } catch (error) {
+    console.error('Error creating notification:', error.response?.data || error.message);
+    throw error;
+  }
+};
+

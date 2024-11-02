@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import '../styles/taskModal.css';
 import {BsFillTrashFill } from 'react-icons/bs';
+import { createTaskAssignmentNotification } from '../api/authApi';
 
 function TaskModal({ isOpen, onClose, onSave, taskToEdit, onChecklistItemToggle, users, isLoading, currentUser }) {
   const [title, setTitle] = useState('');
@@ -157,20 +158,13 @@ function TaskModal({ isOpen, onClose, onSave, taskToEdit, onChecklistItemToggle,
       // If this is an edit (taskToEdit exists) and the assignee changed
       if (taskToEdit && taskToEdit._id && userId !== taskToEdit.assignedTo) {
         try {
-          // Create notification for the newly assigned user
-          await fetch('/api/notifications/task-assigned', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            body: JSON.stringify({
-              taskId: taskToEdit._id,
-              assignedTo: userId,
-              taskTitle: taskToEdit.title
-            })
+          await createTaskAssignmentNotification({
+            taskId: taskToEdit._id,
+            assignedTo: userId,
+            taskTitle: taskToEdit.title
           });
         } catch (error) {
+          // Log error but don't block the assignment
           console.error('Error creating assignment notification:', error);
         }
       }
