@@ -36,16 +36,23 @@ function Settings() {
   const fetchUserData = async () => {
     try {
       const userData = await getUserData();
+      if (!userData) {
+        throw new Error('No user data received');
+      }
       setFormData(prevState => ({
         ...prevState,
-        name: userData.name,
-        email: userData.email
+        name: userData.name || '',
+        email: userData.email || ''
       }));
       setUserData(userData);
       setError('');
     } catch (error) {
       console.error('Error fetching user data:', error);
       setError('Failed to fetch user data. Please try again.');
+      if (error.response?.status === 401) {
+        removeToken();
+        navigate('/login');
+      }
     }
   };
 
