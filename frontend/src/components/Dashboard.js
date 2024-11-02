@@ -4,11 +4,11 @@ import { isAuthenticated, getToken } from '../utils/token';
 import TaskModal from './TaskModal';
 import Board from './Board';
 import Sidebar from './Sidebar';
-import { createTask, getTasks, updateTask, deleteTask, getTaskStats, getAllUsers, bulkUpdateTasks } from '../../api/taskApi';
+import { createTask, getTasks, updateTask, deleteTask, getTaskStats, getAllUsers, bulkUpdateTasks } from '../api/taskApi';
 import Notifications from './Notifications';
 import { FiUsers } from 'react-icons/fi';
 import '../styles/dashboard.css';
-import { getCurrentUser } from '../../api/userApi';
+import { getCurrentUser } from '../api/userApi';
 import AddPeopleModal from './AddPeopleModal';
 import ConfirmModal from './ConfirmModal';
 

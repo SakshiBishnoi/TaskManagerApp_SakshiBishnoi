@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../../api/authApi';
+import { login } from '../api/authApi';
 import astronautImage from '../assets/astronaut.png';
 import backImage from '../assets/Back.png';
 import '../styles/auth.css';
